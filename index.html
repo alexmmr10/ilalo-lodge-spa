@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ILALÓ LODGE &amp; SPA™ · Hotel en Quito, Ecuador - RESERVAS</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+
+  <!-- SEO & Social Meta Tags (Matching Luxury Lodge Standards) -->
+  <meta name="description" content="Hotel de naturaleza y bienestar, dispone de cabañas y domos privados con vistas panorámicas a los Andes. A solo 25 minutos de Quito y del Aeropuerto UIO, Ecuador.">
+  <meta name="author" content="Dev.Alex">
+  <meta name="developer-signature" content="dev.alex.pro">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ilalo-lodge-spa.vercel.app/">
+  <link rel="alternate" hreflang="es" href="https://ilalo-lodge-spa.vercel.app/">
+  <link rel="alternate" hreflang="en" href="https://ilalo-lodge-spa.vercel.app/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://ilalo-lodge-spa.vercel.app/">
+  <meta property="og:site_name" content="ILALÓ LODGE &amp; SPA™ - Hotel en Quito, Ecuador">
+  <meta property="og:title" content="ILALÓ LODGE &amp; SPA™ - Hotel de Naturaleza, Domos &amp; Spa - RESERVAS">
+  <meta property="og:description" content="Hotel de naturaleza, dispone de cabañas y domos privados con vistas al valle andino. A solo 25 minutos de Quito, Ecuador.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ilalo-lodge-spa.vercel.app/">
+  <meta property="og:image" content="https://ilalo-lodge-spa.vercel.app/assets/images/hero-dome.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ILALÓ LODGE &amp; SPA™ - Hotel en Quito, Ecuador">
+  <meta name="twitter:description" content="Hotel de naturaleza, dispone de cabañas y domos privados con tinas de hidromasaje y spa termal.">
+  <meta name="twitter:image" content="https://ilalo-lodge-spa.vercel.app/assets/images/hero-dome.webp">
+
+  <!-- Content Security Policy: Strict & Secure with Map framing -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; media-src 'self' https: data:; frame-src 'self' https://www.google.com https://maps.google.com; connect-src 'self';">
+
+  <!-- High-Priority Preload for LCP Hero Image -->
+  <link rel="preload" as="image" href="assets/images/hero-dome.webp" type="image/webp">
+
+  <!-- Google Fonts: Mulish & Parkinsans & Playfair Display (Exact Fonts from El Jardín Lodge) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,700&family=Parkinsans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet (Versioned for Instant Cache Invalidation) -->
+  <link rel="stylesheet" href="css/styles.css?v=1.1.0">
+
+  <!-- Application Logic (Deferred for Instant Non-Blocking Render, Versioned) -->
+  <script src="js/app.js?v=1.1.0" defer></script>
+
+  <!-- Schema.org JSON-LD Structured Data for Lodging Resort -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Resort",
+    "name": "Ilaló Lodge & Spa",
+    "description": "Hotel de naturaleza, spa holístico y glamping de lujo sustentable en las laderas del Volcán Ilaló, Quito, Ecuador.",
+    "image": "https://ilalo-lodge-spa.vercel.app/assets/images/hero-dome.webp",
+    "url": "https://ilalo-lodge-spa.vercel.app/",
+    "telephone": "+593999999999",
+    "email": "reservas@ilalolodge.com",
+    "priceRange": "$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sector La Cruz, Laderas del Volcán Ilaló",
+      "addressLocality": "Tumbaco",
+      "addressRegion": "Pichincha",
+      "addressCountry": "EC",
+      "postalCode": "170157"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -0.2621,
+      "longitude": -78.3752
+    },
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "4.98"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.98",
+      "reviewCount": "340"
+    },
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "Spa", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Jacuzzi", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Free Parking", "value": true}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER & NAVIGATION BAR (ESTILO EL JARDIN LODGE)
+       ========================================== -->
+  <header class="lodge-header" id="header">
+    <div class="lodge-header-container">
+      
+      <!-- Left Column: Navigation Links -->
+      <nav class="lodge-nav" aria-label="Navegación principal">
+        <ul class="lodge-nav-list">
+          <li><a href="#hero" class="lodge-nav-link active" data-i18n="nav_home">INICIO</a></li>
+          <li><a href="#cabañas" class="lodge-nav-link" data-i18n="nav_domes">CABAÑAS</a></li>
+          <li><a href="#restaurante" class="lodge-nav-link" data-i18n="nav_gastronomy">RESTAURANTE</a></li>
+          <li><a href="#spa" class="lodge-nav-link" data-i18n="nav_spa">SPA</a></li>
+          <li><a href="#paquetes" class="lodge-nav-link" data-i18n="nav_packages">PAQUETES</a></li>
+          <li><a href="#galeria" class="lodge-nav-link" data-i18n="nav_gallery">GALERÍA</a></li>
+          <li><a href="#ubicacion" class="lodge-nav-link" data-i18n="nav_location">UBICACIÓN</a></li>
+        </ul>
+      </nav>
+
+      <!-- Center Column: Lodge Serif Brand Logo -->
+      <a href="#hero" class="lodge-logo" aria-label="Ilaló Lodge &amp; Spa Inicio">
+        <span class="lodge-logo-title">ILALÓ</span>
+        <span class="lodge-logo-subtitle">LODGE &amp; SPA</span>
+      </a>
+
+      <!-- Right Column: Social Outline Circles & Theme Button -->
+      <div class="lodge-header-actions">
+        <!-- Instagram -->
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Instagram de Ilaló Lodge">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <!-- Facebook -->
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Facebook de Ilaló Lodge">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </a>
+        <!-- TripAdvisor / Review Circle -->
+        <a href="#opiniones" class="social-circle-btn" aria-label="Reseñas en TripAdvisor">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="12 8 13.5 11.5 17 11.5 14 14 15 17.5 12 15.5 9 17.5 10 14 7 11.5 10.5 11.5 12 8"></polygon>
+          </svg>
+        </a>
+        <!-- Theme Toggle -->
+        <button type="button" class="social-circle-btn theme-toggle-btn" id="themeToggle" aria-label="Cambiar tema">
+          <svg class="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="mobile-menu-burger" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+  <aside class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
+    <div>
+      <div class="mobile-nav-header">
+        <div class="lodge-logo">
+          <span class="lodge-logo-title">ILALÓ</span>
+          <span class="lodge-logo-subtitle">LODGE &amp; SPA</span>
+        </div>
+        <button type="button" class="mobile-menu-burger" id="mobileNavClose" aria-label="Cerrar menú móvil">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="mobile-nav-list">
+        <li><a href="#hero" class="mobile-nav-link" data-i18n="nav_home">INICIO</a></li>
+        <li><a href="#cabañas" class="mobile-nav-link" data-i18n="nav_domes">CABAÑAS</a></li>
+        <li><a href="#restaurante" class="mobile-nav-link" data-i18n="nav_gastronomy">RESTAURANTE</a></li>
+        <li><a href="#spa" class="mobile-nav-link" data-i18n="nav_spa">SPA</a></li>
+        <li><a href="#paquetes" class="mobile-nav-link" data-i18n="nav_packages">PAQUETES</a></li>
+        <li><a href="#galeria" class="mobile-nav-link" data-i18n="nav_gallery">GALERÍA</a></li>
+        <li><a href="#ubicacion" class="mobile-nav-link" data-i18n="nav_location">UBICACIÓN</a></li>
+        <li><a href="#faq" class="mobile-nav-link" data-i18n="nav_faq">POLÍTICAS &amp; FAQ</a></li>
+      </ul>
+    </div>
+    <div class="mobile-nav-footer">
+      <button type="button" class="mobile-theme-btn" id="themeToggleMobile" aria-label="Cambiar tema">
+        <span class="theme-icon-sun">☀️ Modo Claro</span>
+        <span class="theme-icon-moon">🌙 Modo Oscuro</span>
+      </button>
+      <a href="#reservar" class="lodge-pill-btn lodge-pill-btn-green btn-block text-center" data-i18n="hero_pill_btn">Ver Disponibilidad</a>
+    </div>
+  </aside>
+
+  <!-- ==========================================
+       BOTTOM LEFT FLOATING LANGUAGE SELECTOR (SCREENSHOT 1 & 2)
+       ========================================== -->
+  <button type="button" class="lodge-lang-widget" id="langToggle" aria-label="Cambiar idioma / Change language">
+    <span class="lang-flag" id="langFlag">🇪🇸</span>
+    <span class="lang-text" id="langText">ES</span>
+    <svg class="lang-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </button>
+
+  <!-- ==========================================
+       RIGHT EDGE FLOATING WHATSAPP BUTTON (SCREENSHOT 1, 2, 3, 4)
+       ========================================== -->
+  <a 
+    href="https://wa.me/593999999999?text=Hola%20Ilal%C3%B3%20Lodge%20%26%20Spa%2C%20deseo%20consultar%20disponibilidad%20y%20tarifas." 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="lodge-whatsapp-widget" 
+    id="whatsappFloat" 
+    aria-label="Contactar al Concierge por WhatsApp"
+    title="Chatear con Ilaló Lodge &amp; Spa">
+    <span class="whatsapp-status-dot"></span>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.42c-1.45 0-2.88-.38-4.14-1.11l-.3-.17-3.12.82.83-3.04-.19-.31a8.21 8.21 0 0 1-1.25-4.44c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8.6.26 1.07.42 1.44.54.6.19 1.15.17 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/>
+    </svg>
+  </a>
+
+  <!-- ==========================================
+       HERO FULLSCREEN (SCREENSHOT 1 & 2 EXACT MATCH)
+       ========================================== -->
+  <section class="lodge-hero" id="hero">
+    <div class="lodge-hero-bg">
+      <video 
+        id="heroVideoBg" 
+        class="lodge-hero-video" 
+        poster="assets/images/hero-dome.webp" 
+        autoplay 
+        muted 
+        loop 
+        playsinline 
+        preload="metadata" 
+        tabindex="-1">
+        <source src="assets/videos/hero-background.webm" type="video/webm">
+        <source src="assets/videos/hero-background.mp4" type="video/mp4">
+        <track kind="captions" src="data:text/vtt,WEBVTT" srclang="es" label="Video ambiental">
+      </video>
+      <div class="lodge-hero-gradient"></div>
+    </div>
+
+    <!-- Hero Content Pinned to Bottom-Left (Screenshot 2) -->
+    <div class="lodge-hero-content-wrapper">
+      <div class="lodge-hero-content">
+        <!-- Hero CTA Buttons Row -->
+        <div class="lodge-hero-cta-row">
+          <a href="#reservar" class="lodge-pill-btn lodge-pill-btn-white" data-i18n="hero_pill_btn">
+            Ver Disponibilidad
+          </a>
+          <a href="#domos-grid" class="lodge-pill-btn lodge-pill-btn-ghost" data-i18n="hero_cta_explore">
+            Explorar Cabañas
+          </a>
+        </div>
+
+        <!-- Large Bold Headline -->
+        <h1 class="lodge-hero-headline" data-i18n="hero_headline">
+          Hotel Destino en el Volcán Ilaló con cabañas y domos privados, vistas al valle y experiencias auténticas, a solo 25 minutos de Quito.
+        </h1>
+      </div>
+    </div>
+
+    <!-- Right Vertical Scroll Indicator (responsive: desktop=SCROLL, mobile=TOUCH) -->
+    <div class="lodge-scroll-indicator" id="heroScrollIndicator" aria-hidden="true">
+      <span class="scroll-indicator-desktop">— SCROLL —</span>
+      <span class="scroll-indicator-mobile">— TOUCH —</span>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       BOOKING AVAILABILITY BAR (AMENITIZ STYLE ENGINE)
+       ========================================== -->
+  <section class="lodge-booking-bar-section">
+    <div class="container">
+      <form class="lodge-booking-bar" id="heroQuickSearch">
+        <div class="lodge-book-field">
+          <label for="heroCheckIn" class="lodge-book-label" data-i18n="search_checkin">LLEGADA</label>
+          <input type="date" id="heroCheckIn" class="lodge-book-input" required>
+        </div>
+
+        <div class="lodge-book-field">
+          <label for="heroCheckOut" class="lodge-book-label" data-i18n="search_checkout">SALIDA</label>
+          <input type="date" id="heroCheckOut" class="lodge-book-input" required>
+        </div>
+
+        <div class="lodge-book-field">
+          <label for="heroGuests" class="lodge-book-label" data-i18n="search_guests">HUÉSPEDES</label>
+          <select id="heroGuests" class="lodge-book-input">
+            <option value="2 Adultos (Pareja)" data-i18n="opt_guests_2">2 Adultos (Pareja)</option>
+            <option value="3 Personas" data-i18n="opt_guests_3">3 Personas</option>
+            <option value="1 Persona (Solo Retreat)" data-i18n="opt_guests_1">1 Persona (Retiro)</option>
+          </select>
+        </div>
+
+        <div class="lodge-book-field">
+          <label for="heroDome" class="lodge-book-label" data-i18n="search_category">CABAÑA / DOMO</label>
+          <select id="heroDome" class="lodge-book-input">
+            <option value="master" data-i18n="opt_dome_master">Volcán Master Suite &amp; Spa</option>
+            <option value="constelaciones" data-i18n="opt_dome_const">Constelaciones Deluxe Dome</option>
+            <option value="bosque" data-i18n="opt_dome_forest">Bosque Nativo Eco-Lodge</option>
+          </select>
+        </div>
+
+        <button type="button" class="lodge-book-submit-btn" id="heroCheckAvailability" data-i18n="search_btn">
+          RESERVAR AHORA
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SPLIT SECTION 1: ALOJAMIENTO / CABAÑAS PRIVADAS (SCREENSHOT 3)
+       ========================================== -->
+  <section class="lodge-split-section" id="cabanas">
+    <span id="cabañas" style="position:relative;top:-80px;visibility:hidden;" aria-hidden="true"></span>
+    <!-- Left Column: Text on Cream Background -->
+    <div class="lodge-split-col lodge-split-text-col">
+      <div class="lodge-split-inner">
+        <span class="lodge-eyebrow" data-i18n="split_1_eyebrow">ALOJAMIENTO</span>
+        <h2 class="lodge-split-title" data-i18n="split_1_title">CABAÑAS PRIVADAS</h2>
+        <p class="lodge-split-desc" data-i18n="split_1_desc">
+          Experimenta vistas panorámicas que te transportan a la belleza única de los Andes. Cada habitación es un espacio diseñado para ofrecer no solo comodidad sino también una conexión auténtica con la Naturaleza.
+        </p>
+        <a href="#domos-grid" class="lodge-pill-btn lodge-pill-btn-green" data-i18n="split_1_btn">
+          VER CABAÑAS
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column: Full Bleed Suite Photo (Screenshot 3) -->
+    <div class="lodge-split-col lodge-split-media-col">
+      <img 
+        src="assets/images/interior-suite.jpg" 
+        alt="Habitación y suite privada en Ilaló Lodge &amp; Spa con chimenea y vista a la montaña" 
+        class="lodge-split-img" 
+        loading="lazy" 
+        decoding="async">
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SHOWCASE DE CABAÑAS & DOMOS (CON VIDEO TOUR DEL USUARIO)
+       ========================================== -->
+  <section class="lodge-showcase-section" id="domos-grid">
+    <div class="container">
+      <div class="lodge-section-header-center">
+        <span class="lodge-eyebrow" data-i18n="domes_badge">NUESTRAS SUITES DE MONTAÑA</span>
+        <h2 class="lodge-section-title-dark" data-i18n="domes_title">Cabañas &amp; Domos Geodésicos de Lujo</h2>
+        <p class="lodge-section-sub-dark" data-i18n="domes_desc">
+          Equipadas con tina nórdica privada de cedro a 38°C, chimenea a leña, terraza suspendida y vistas 360° al valle andino.
+        </p>
+      </div>
+
+      <div class="lodge-cards-grid">
+        <!-- Card 1: Domo Master (Con video de alta definición al dar clic) -->
+        <article class="lodge-card">
+          <button type="button" class="lodge-card-media lodge-card-clickable" data-dome-key="master" aria-label="Ver video de Volcán Master Suite &amp; Spa">
+            <picture>
+              <source srcset="assets/images/hero-dome.webp" type="image/webp">
+              <img 
+                src="assets/images/hero-dome.jpg" 
+                alt="Volcán Master Suite con tina nórdica e hidromasaje exterior privado" 
+                class="lodge-card-img" 
+                loading="lazy" 
+                decoding="async"
+                width="640"
+                height="420">
+            </picture>
+            <span class="dome-video-pill"><span class="video-dot"></span> <span data-i18n="tag_video_tour">Ver Video HD</span></span>
+            <span class="lodge-card-tag" data-i18n="card_tag_popular">Suite Signature</span>
+            <span class="lodge-card-price-pill" data-i18n="tag_price_master">Desde $195</span>
+            <div class="dome-media-hint" aria-hidden="true">
+              <span class="dome-media-hint-pill">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                </svg>
+                <span>Reproducir Video</span>
+              </span>
+            </div>
+          </button>
+          <div class="lodge-card-body">
+            <span class="lodge-eyebrow-sm" data-i18n="dome_master_badge">Suite Principal con Spa</span>
+            <h3 class="lodge-card-title" data-i18n="dome_master_title">Volcán Master Suite &amp; Spa</h3>
+            <p class="lodge-card-spec" data-i18n="dome_master_spec">Capacidad 2-3 Huéspedes · 48 m² · Cama King Size</p>
+            <ul class="lodge-amenities-list">
+              <li data-i18n="amenity_deck_tub">✓ Jacuzzi de Cedro en Deck</li>
+              <li data-i18n="amenity_fireplace">✓ Chimenea Nórdica de Leña</li>
+              <li data-i18n="amenity_view_360">✓ Vista Panorámica al Valle</li>
+              <li data-i18n="amenity_minibar">✓ Minibar Gourmet &amp; Cava</li>
+            </ul>
+            <div class="lodge-card-footer">
+              <div class="lodge-card-price">
+                <span class="lodge-price-val">$195</span>
+                <span class="lodge-price-unit" data-i18n="per_night">USD / noche (desde $124/pers)</span>
+              </div>
+              <button type="button" class="lodge-card-select-btn btn-select-dome" data-dome-type="master" aria-label="Reservar Volcán Master Suite & Spa" data-i18n="btn_select">
+                Reservar
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Domo Constelaciones (Fotografía estática de alta calidad) -->
+        <article class="lodge-card">
+          <div class="lodge-card-media" data-dome-key="constelaciones">
+            <picture>
+              <source srcset="assets/images/interior-suite.webp" type="image/webp">
+              <img 
+                src="assets/images/interior-suite.jpg" 
+                alt="Interior del Domo Constelaciones con cúpula panorámica para observar estrellas" 
+                class="lodge-card-img" 
+                loading="lazy" 
+                decoding="async"
+                width="640"
+                height="420">
+            </picture>
+            <span class="lodge-card-tag" data-i18n="card_tag_stargazing">Stargazing View</span>
+            <span class="lodge-card-price-pill" data-i18n="tag_price_const">Desde $165</span>
+          </div>
+          <div class="lodge-card-body">
+            <span class="lodge-eyebrow-sm" data-i18n="dome_const_badge">Domo Astronómico</span>
+            <h3 class="lodge-card-title" data-i18n="dome_const_title">Constelaciones Deluxe Dome</h3>
+            <p class="lodge-card-spec" data-i18n="dome_const_spec">Capacidad 2 Huéspedes · 42 m² · Cama Queen Size</p>
+            <ul class="lodge-amenities-list">
+              <li data-i18n="amenity_stargaze_roof">✓ Techo Panorámico Estelar</li>
+              <li data-i18n="amenity_telescope">✓ Telescopio Astronómico</li>
+              <li data-i18n="amenity_alpaca">✓ Ropa de Cama en Alpaca</li>
+              <li data-i18n="amenity_bath_panoramic">✓ Baño Panorámico &amp; Tina</li>
+            </ul>
+            <div class="lodge-card-footer">
+              <div class="lodge-card-price">
+                <span class="lodge-price-val">$165</span>
+                <span class="lodge-price-unit" data-i18n="per_night">USD / noche</span>
+              </div>
+              <button type="button" class="lodge-card-select-btn btn-select-dome" data-dome-type="constelaciones" aria-label="Reservar Constelaciones Deluxe Dome" data-i18n="btn_select">
+                Reservar
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Domo Bosque Nativo (Fotografía estática de alta calidad) -->
+        <article class="lodge-card">
+          <div class="lodge-card-media" data-dome-key="bosque">
+            <picture>
+              <source srcset="assets/images/stargazing-spa.webp" type="image/webp">
+              <img 
+                src="assets/images/stargazing-spa.jpg" 
+                alt="Cabaña Bosque Nativo con tina de cedro entre bosque andino" 
+                class="lodge-card-img" 
+                loading="lazy" 
+                decoding="async"
+                width="640"
+                height="420">
+            </picture>
+            <span class="lodge-card-tag" data-i18n="card_tag_nature">Inmersión Natural</span>
+            <span class="lodge-card-price-pill" data-i18n="tag_price_forest">Desde $145</span>
+          </div>
+          <div class="lodge-card-body">
+            <span class="lodge-eyebrow-sm" data-i18n="dome_forest_badge">Eco-Lodge &amp; Jardines</span>
+            <h3 class="lodge-card-title" data-i18n="dome_forest_title">Bosque Nativo Eco-Lodge</h3>
+            <p class="lodge-card-spec" data-i18n="dome_forest_spec">Capacidad 2 Huéspedes · 38 m² · Cama Queen · Pet Friendly</p>
+            <ul class="lodge-amenities-list">
+              <li data-i18n="amenity_sunken_tub">✓ Tina de Cedro Sumergida</li>
+              <li data-i18n="amenity_catamaran">✓ Red Catamarán al Vacío</li>
+              <li data-i18n="amenity_firepit">✓ Fogata de Piedra Privada</li>
+              <li data-i18n="amenity_aromatherapy">✓ Aromaterapia de Bosque</li>
+            </ul>
+            <div class="lodge-card-footer">
+              <div class="lodge-card-price">
+                <span class="lodge-price-val">$145</span>
+                <span class="lodge-price-unit" data-i18n="per_night">USD / noche</span>
+              </div>
+              <button type="button" class="lodge-card-select-btn btn-select-dome" data-dome-type="bosque" aria-label="Reservar Bosque Nativo Eco-Lodge" data-i18n="btn_select">
+                Reservar
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SPLIT SECTION 2: GASTRONOMÍA / RESTAURANTE (SCREENSHOT 4 EXACT MATCH)
+       ========================================== -->
+  <section class="lodge-split-section lodge-split-reversed" id="restaurante">
+    <!-- Left Column: Full Bleed Gastronomy Photo (Screenshot 4) with Animated Candle Flames & Balcony Fairy Lights -->
+    <div class="lodge-split-col lodge-split-media-col gastro-animated-media" id="gastroMediaContainer">
+      <picture>
+        <source srcset="assets/images/gastronomy.webp" type="image/webp">
+        <img 
+          src="assets/images/gastronomy.jpg" 
+          alt="Platos de alta cocina andina con ingredientes frescos en El Jardín Restaurante" 
+          class="lodge-split-img" 
+          loading="lazy" 
+          decoding="async"
+          width="800"
+          height="600">
+      </picture>
+
+      <!-- Capa Cinemática 4K de Iluminación Orgánica (Llamas de Vela, Resplandor Óptico & Guirnalda de Balcón) -->
+      <canvas id="gastroLightsCanvas" class="gastro-lights-canvas" role="presentation"></canvas>
+    </div>
+
+    <!-- Right Column: Text on Cream Background (Screenshot 4) -->
+    <div class="lodge-split-col lodge-split-text-col">
+      <div class="lodge-split-inner">
+        <span class="lodge-eyebrow" data-i18n="split_2_eyebrow">GASTRONOMÍA</span>
+        <h2 class="lodge-split-title" data-i18n="split_2_title">EL HUERTO RESTAURANTE</h2>
+        <p class="lodge-split-desc" data-i18n="split_2_desc">
+          Es un refugio gastronómico que te sumerge en la esencia de la cocina con identidad. Cada plato es una maravillosa combinación de sabores auténticos y texturas sorprendentes cosechados directamente en nuestra huerta andina.
+        </p>
+        <a href="#reservar" class="lodge-pill-btn lodge-pill-btn-green" data-i18n="split_2_btn">
+          VER DETALLES
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SPLIT SECTION 3: SPA & BIENESTAR (ESENCIA LODGE)
+       ========================================== -->
+  <section class="lodge-split-section" id="spa">
+    <!-- Left Column: Text on Cream Background (Screenshot Exact Match) -->
+    <div class="lodge-split-col lodge-split-text-col">
+      <div class="lodge-split-inner">
+        <span class="lodge-eyebrow" data-i18n="spa_badge">SANTUARIO DE BIENESTAR</span>
+        <h2 class="lodge-split-title" data-i18n="spa_title">SPA TERMAL &amp; TERAPIAS HOLÍSTICAS</h2>
+        <p class="lodge-split-desc" data-i18n="spa_desc">
+          Diseñado para restaurar el equilibrio vital mediante el poder curativo de las aguas termales, piedras volcánicas calientes y esencias botánicas del huerto.
+        </p>
+        <a href="#reservar" class="lodge-pill-btn lodge-pill-btn-green" data-i18n="spa_banner_btn">
+          Cotizar con Spa Incluido
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column: Full Bleed Spa Photo with Animated Stars & Hydrothermal Steam -->
+    <div class="lodge-split-col lodge-split-media-col spa-animated-media" id="spaMediaContainer">
+      <picture>
+        <source srcset="assets/images/stargazing-spa.webp" type="image/webp">
+        <img 
+          src="assets/images/stargazing-spa.jpg" 
+          alt="Tina caliente de cedro nórdica y solárium bajo cielo estrellado en Ilaló Lodge &amp; Spa" 
+          class="lodge-split-img" 
+          loading="lazy" 
+          decoding="async"
+          width="800"
+          height="600">
+      </picture>
+      
+      <!-- Canvas de Estrellas Parpadeantes y Galaxia Vía Láctea -->
+      <canvas id="spaStarsCanvas" class="spa-stars-canvas" role="presentation"></canvas>
+
+      <!-- Capas de Vapor Termal Orgánico de la Tina de Cedro -->
+      <div class="spa-steam-overlay" aria-hidden="true">
+        <div class="steam-plume steam-p1"></div>
+        <div class="steam-plume steam-p2"></div>
+        <div class="steam-plume steam-p3"></div>
+        <div class="steam-plume steam-p4"></div>
+        <div class="steam-plume steam-p5"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       PAQUETES COMPLETOS Y EXPERIENCIAS (ALL-INCLUSIVE)
+       ========================================== -->
+  <section class="lodge-packages-section" id="paquetes">
+    <div class="container">
+      <div class="lodge-section-header-center">
+        <span class="lodge-eyebrow" data-i18n="packages_badge">EXPERIENCIAS COMPLETAS</span>
+        <h2 class="lodge-section-title-dark" data-i18n="packages_title">Paquetes &amp; Escapadas Exclusivas</h2>
+        <p class="lodge-section-sub-dark" data-i18n="packages_desc">
+          Todo resuelto: alojamiento de lujo, circuito de spa, cenas a la luz de las velas y actividades sin preocupaciones.
+        </p>
+      </div>
+
+      <div class="packages-grid">
+        <!-- Package 1: Romance -->
+        <article class="package-card">
+          <div class="package-header">
+            <span class="package-tag" data-i18n="pkg_1_tag">El Más Escogido</span>
+            <h3 class="package-title" data-i18n="pkg_1_title">Escapada Romántica &amp; Suite</h3>
+            <p class="package-subtitle" data-i18n="pkg_1_sub">1 Noche para 2 Personas en Volcán Master Suite</p>
+            <div class="package-price-wrap">
+              <span class="package-price">$260</span>
+              <span class="package-price-currency">USD total pareja</span>
+            </div>
+          </div>
+          <ul class="package-features">
+            <li data-i18n="pkg_1_f1">✓ Tina nórdica de cedro privada con sales y pétalos</li>
+            <li data-i18n="pkg_1_f2">✓ Cena romántica gourmet de 3 tiempos a la luz de las velas</li>
+            <li data-i18n="pkg_1_f3">✓ 1 Botella de espumante o vino de autor de bienvenida</li>
+            <li data-i18n="pkg_1_f4">✓ Desayuno artesanal del huerto servido en la terraza</li>
+            <li data-i18n="pkg_1_f5">✓ Fogata nocturna privada con kit para asar malvaviscos</li>
+            <li data-i18n="pkg_1_f6">✓ Late Check-out especial hasta las 13:00 hrs</li>
+          </ul>
+          <button type="button" class="lodge-pill-btn lodge-pill-btn-green btn-select-package" data-package="romance" data-i18n="pkg_select_btn">
+            Elegir Paquete Romántico
+          </button>
+        </article>
+
+        <!-- Package 2: Wellness & Spa -->
+        <article class="package-card featured">
+          <div class="package-header">
+            <span class="package-tag package-tag-gold" data-i18n="pkg_2_tag">Reconexión Total</span>
+            <h3 class="package-title" data-i18n="pkg_2_title">Retiro Spa &amp; Wellness Total</h3>
+            <p class="package-subtitle" data-i18n="pkg_2_sub">1 Noche para 2 Personas con Terapias Incluidas</p>
+            <div class="package-price-wrap">
+              <span class="package-price">$290</span>
+              <span class="package-price-currency">USD total pareja</span>
+            </div>
+          </div>
+          <ul class="package-features">
+            <li data-i18n="pkg_2_f1">✓ Alojamiento en Domo Suite con hidromasaje privado</li>
+            <li data-i18n="pkg_2_f2">✓ 2 Masajes corporales completos de 60 min con piedras calientes</li>
+            <li data-i18n="pkg_2_f3">✓ Circuito hidrotermal en tina con sales minerales volcánicas</li>
+            <li data-i18n="pkg_2_f4">✓ Sesión de aromaterapia y baño de vapor herbal</li>
+            <li data-i18n="pkg_2_f5">✓ Tabla de quesos madurados, frutos secos e infusiones orgánicas</li>
+            <li data-i18n="pkg_2_f6">✓ Desayuno saludable campestre con frutas andinas</li>
+          </ul>
+          <button type="button" class="lodge-pill-btn lodge-pill-btn-green btn-select-package" data-package="spa" data-i18n="pkg_select_btn">
+            Elegir Paquete Spa
+          </button>
+        </article>
+
+        <!-- Package 3: Aventura & Cumbre -->
+        <article class="package-card">
+          <div class="package-header">
+            <span class="package-tag" data-i18n="pkg_3_tag">Naturaleza Activa</span>
+            <h3 class="package-title" data-i18n="pkg_3_title">Aventura &amp; Cumbre Ilaló</h3>
+            <p class="package-subtitle" data-i18n="pkg_3_sub">2 Noches de Inmersión Andina para 2 Personas</p>
+            <div class="package-price-wrap">
+              <span class="package-price">$380</span>
+              <span class="package-price-currency">USD total pareja</span>
+            </div>
+          </div>
+          <ul class="package-features">
+            <li data-i18n="pkg_3_f1">✓ 2 Noches en Constelaciones Dome o Bosque Nativo</li>
+            <li data-i18n="pkg_3_f2">✓ Guía privado de senderismo hasta la cruz y mirador 360° del Ilaló</li>
+            <li data-i18n="pkg_3_f3">✓ Canasta gourmet de picnic andino para la cumbre</li>
+            <li data-i18n="pkg_3_f4">✓ Acceso ilimitado a tina caliente y fogata con leña de eucalipto</li>
+            <li data-i18n="pkg_3_f5">✓ Sesión nocturna de observación astronómica con telescopio</li>
+            <li data-i18n="pkg_3_f6">✓ 2 Desayunos de cortesía completos para ambos días</li>
+          </ul>
+          <button type="button" class="lodge-pill-btn lodge-pill-btn-green btn-select-package" data-package="adventure" data-i18n="pkg_select_btn">
+            Elegir Paquete Aventura
+          </button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MOTOR DE RESERVA & CALCULADORA EN VIVO
+       ========================================== -->
+  <section class="lodge-booking-calculator-section" id="reservar">
+    <div class="container">
+      <div class="lodge-section-header-center">
+        <span class="lodge-eyebrow" data-i18n="calc_badge">RESERVA DIRECTA GARANTIZADA</span>
+        <h2 class="lodge-section-title-dark" data-i18n="calc_title">Calcula y Confirma Tu Estadía</h2>
+        <p class="lodge-section-sub-dark" data-i18n="calc_desc">
+          Tarifas transparentes sin comisiones intermediarias. Cotiza tu estadía y confirma directamente vía WhatsApp con nuestro concierge.
+        </p>
+      </div>
+
+      <!-- Beneficio Fiscal Exención IVA (Políticas El Jardín Lodge) -->
+      <div class="vat-policy-callout">
+        <div class="vat-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <div class="vat-policy-text">
+          <strong data-i18n="vat_policy_title">Beneficio Fiscal para Turistas Extranjeros:</strong>
+          <span data-i18n="vat_policy_desc">Los huéspedes no residentes en Ecuador están <strong>exentos del 15% de IVA</strong> presentando su pasaporte y sello de turista vigente al hacer el check-in.</span>
+        </div>
+      </div>
+
+      <div class="calculator-box">
+        <div class="calculator-layout">
+          <!-- Form Inputs -->
+          <div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="calcCheckIn" class="form-label" data-i18n="calc_label_checkin">Fecha de Llegada (Check-in)</label>
+                <input type="date" id="calcCheckIn" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="calcCheckOut" class="form-label" data-i18n="calc_label_checkout">Fecha de Salida (Check-out)</label>
+                <input type="date" id="calcCheckOut" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="calcDome" class="form-label" data-i18n="calc_label_dome">Cabaña o Domo</label>
+                <select id="calcDome" class="form-control">
+                  <option value="master">Volcán Master Suite &amp; Spa ($195/noche)</option>
+                  <option value="constelaciones">Constelaciones Deluxe Dome ($165/noche)</option>
+                  <option value="bosque">Bosque Nativo Eco-Lodge ($145/noche)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="calcGuests" class="form-label" data-i18n="calc_label_guests">Número de Huéspedes</label>
+                <select id="calcGuests" class="form-control">
+                  <option value="2 Adultos">2 Adultos (Pareja)</option>
+                  <option value="3 Adultos">3 Adultos (+ $25 adicional)</option>
+                  <option value="1 Adulto">1 Adulto (Retiro Individual)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Packages Shortcut Dropdown -->
+            <div class="form-group">
+              <label for="calcPackageSelect" class="form-label" data-i18n="calc_label_pkg">Paquete Especial (Opcional)</label>
+              <select id="calcPackageSelect" class="form-control">
+                <option value="none" data-i18n="pkg_opt_none">Ninguno (Tarifa Estándar)</option>
+                <option value="romance" data-i18n="pkg_opt_romance">Paquete Escapada Romántica &amp; Suite ($260)</option>
+                <option value="spa" data-i18n="pkg_opt_spa">Paquete Retiro Spa &amp; Wellness Total ($290)</option>
+                <option value="adventure" data-i18n="pkg_opt_adventure">Paquete Aventura &amp; Cumbre Ilaló ($380)</option>
+              </select>
+            </div>
+
+            <div class="addons-selection">
+              <span class="form-label" data-i18n="calc_addons_title">Experiencias de Bienestar &amp; Adicionales</span>
+              
+              <label class="addon-checkbox-label">
+                <span class="addon-info">
+                  <input type="checkbox" id="addonSpa">
+                  <span data-i18n="calc_addon_spa">Masaje en Pareja de 60 min con Piedras Volcánicas</span>
+                </span>
+                <span class="addon-price">+$45 USD</span>
+              </label>
+
+              <label class="addon-checkbox-label">
+                <span class="addon-info">
+                  <input type="checkbox" id="addonDinner">
+                  <span data-i18n="calc_addon_dinner">Cena Romántica 3 Tiempos a la Carta + Botella de Vino</span>
+                </span>
+                <span class="addon-price">+$55 USD</span>
+              </label>
+
+              <label class="addon-checkbox-label">
+                <span class="addon-info">
+                  <input type="checkbox" id="addonFirewood">
+                  <span data-i18n="calc_addon_firewood">Fogata Nocturna Privada + Kit Gourmet S'mores</span>
+                </span>
+                <span class="addon-price">+$15 USD</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Quote Summary Box -->
+          <div class="quote-summary">
+            <div>
+              <h3 class="quote-title" data-i18n="calc_summary_title">Resumen de Cotización</h3>
+
+              <div class="quote-line">
+                <span data-i18n="calc_sum_duration">Duración de Estadía:</span>
+                <strong id="summaryNights">1 noche</strong>
+              </div>
+
+              <div class="quote-line">
+                <span data-i18n="calc_sum_dome_rate">Alojamiento:</span>
+                <strong id="summaryDomeRate">$195 USD</strong>
+              </div>
+
+              <div class="quote-line">
+                <span data-i18n="calc_sum_addons">Servicios Adicionales:</span>
+                <strong id="summaryAddons">$0 USD</strong>
+              </div>
+
+              <div class="quote-line">
+                <span data-i18n="calc_sum_breakfast">Desayuno Campestre:</span>
+                <strong class="text-success" data-i18n="calc_sum_free">¡Gratis Incluido!</strong>
+              </div>
+
+              <div class="quote-line">
+                <span data-i18n="calc_sum_wifi">Wifi Satelital &amp; Estacionamiento:</span>
+                <strong class="text-success" data-i18n="calc_sum_included">Incluidos</strong>
+              </div>
+
+              <div class="quote-line total">
+                <span data-i18n="calc_sum_total">Total Estimado:</span>
+                <span class="quote-total-price" id="summaryTotal">$195 USD</span>
+              </div>
+            </div>
+
+            <div class="quote-actions">
+              <a 
+                id="btnReserveWhatsApp" 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="lodge-pill-btn lodge-pill-btn-green btn-block text-center">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <span data-i18n="btn_whatsapp_reserve">Confirmar Disponibilidad en WhatsApp</span>
+              </a>
+              <p class="quote-security-note" data-i18n="calc_security_note">
+                🔒 Reserva directa oficial · Sin comisiones ni cargos ocultos
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       UBICACIÓN & TRASLADOS
+       ========================================== -->
+  <section class="lodge-location-section" id="ubicacion">
+    <div class="container">
+      <div class="location-card">
+        <div>
+          <span class="lodge-eyebrow" data-i18n="loc_badge">UBICACIÓN PRIVILEGIADA</span>
+          <h2 class="lodge-split-title" data-i18n="loc_title">En las Faldas del Volcán Ilaló</h2>
+          <p class="mb-md" data-i18n="loc_desc">
+            Ubicados en la ladera oriental del Volcán Ilaló en el valle de Tumbaco, gozamos de un microclima templado privilegiado (18°C a 24°C) todo el año, a corta distancia de la ciudad y del aeropuerto pero en absoluta calma natural.
+          </p>
+          <ul class="location-bullets">
+            <li data-i18n="loc_bullet_1">📍 <strong>Desde Quito:</strong> A solo 25 minutos por la autopista Ruta Viva y Vía Intervalles.</li>
+            <li data-i18n="loc_bullet_2">✈️ <strong>Desde el Aeropuerto UIO:</strong> 30 minutos directos. Transfer privado VIP bajo reserva.</li>
+            <li data-i18n="loc_bullet_3">🚗 <strong>Tipo de Acceso:</strong> Vía pavimentada hasta el portón del lodge. Apto para todo tipo de vehículos.</li>
+            <li data-i18n="loc_bullet_4">🛡️ <strong>Seguridad:</strong> Finca privada con estacionamiento cerrado y vigilancia permanente 24/7.</li>
+          </ul>
+          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="lodge-pill-btn lodge-pill-btn-green" data-i18n="loc_btn_maps">
+            Abrir Coordenadas en Google Maps
+          </a>
+        </div>
+
+        <div class="map-embed-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.5!2d-78.3752!3d-0.2621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMCwyNicwMy42JdCfLTc4wrAyMicxMC43J1c!5e0!3m2!1ses!2sec!4v1696500000000"
+            width="100%"
+            height="100%"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            title="Ubicación de Ilaló Lodge & Spa en Google Maps"
+            aria-label="Mapa de ubicación del lodge"></iframe>
+          <div class="map-info-overlay">
+            <div class="map-info-pin">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div>
+              <p class="map-resort-title" data-i18n="loc_resort_name">ILALÓ LODGE &amp; SPA™</p>
+              <span class="map-resort-altitude" data-i18n="loc_resort_altitude">Altitud: 2,650 msnm · 18°C a 24°C</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       GALERÍA FOTOGRÁFICA DE ALTA RESOLUCIÓN (9 FOTOS 4K)
+       ========================================== -->
+  <section class="lodge-gallery-section" id="galeria">
+    <div class="container">
+      <div class="lodge-section-header-center">
+        <span class="lodge-eyebrow" data-i18n="gallery_badge">GALERÍA EXCLUSIVA</span>
+        <h2 class="lodge-section-title-dark" data-i18n="gallery_title">Postales de Nuestro Santuario en el Ilaló</h2>
+        <p class="lodge-section-sub-dark" data-i18n="gallery_desc">
+          Explora los rincones, atardeceres dorados, tinas humeantes y noches estrelladas que te esperan en tu próxima escapada.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Foto 1: Atardecer en Domo Geodésico -->
+        <figure class="gallery-item gallery-item-wide gallery-clickable" data-index="0" data-caption="Atardecer dorado en Volcán Master Suite con tina nórdica privada y vista a los Andes.">
+          <picture>
+            <source srcset="assets/images/gallery/gallery-1-sunset.webp" type="image/webp">
+            <img src="assets/images/gallery/gallery-1-sunset.jpg" alt="Domo Geodésico al atardecer con tina nórdica" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-tag" data-i18n="gallery_tag_1">Atardecer Andino</span>
+            <h4 class="gallery-name" data-i18n="gallery_name_1">Volcán Master Suite &amp; Deck</h4>
+          </figcaption>
+        </figure>
+
+        <!-- Foto 2: Interior Suite con Chimenea -->
+        <figure class="gallery-item gallery-clickable" data-index="1" data-caption="Suite interior con chimenea a leña, cama king size y domo panorámico para observación nocturna.">
+          <picture>
+            <source srcset="assets/images/gallery/gallery-2-interior.webp" type="image/webp">
+            <img src="assets/images/gallery/gallery-2-interior.jpg" alt="Interior de suite de lujo con chimenea" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-tag" data-i18n="gallery_tag_2">Interiorismo Nórdico</span>
+            <h4 class="gallery-name" data-i18n="gallery_name_2">Suite con Chimenea a Leña</h4>
+          </figcaption>
+        </figure>
+
+        <!-- Foto 3: Circuito Spa Termal -->
+        <figure class="gallery-item gallery-clickable" data-index="2" data-caption="Circuito hidrotermal en tina nórdica artesanal de cedro a 38°C en medio de la naturaleza.">
+          <picture>
+            <source srcset="assets/images/gallery/gallery-3-spa.webp" type="image/webp">
+            <img src="assets/images/gallery/gallery-3-spa.jpg" alt="Tina de cedro termal en terraza de piedra" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-tag" data-i18n="gallery_tag_3">Hidroterapia</span>
+            <h4 class="gallery-name" data-i18n="gallery_name_3">Tina Nórdica de Cedro</h4>
+          </figcaption>
+        </figure>
+
+        <!-- Foto 4: Cena Romántica Privada -->
+        <figure class="gallery-item gallery-item-wide gallery-clickable" data-index="3" data-caption="Cena gourmet a la luz de las velas en terraza privada con vista al valle nocturno iluminado.">
+          <picture>
+            <source srcset="assets/images/gallery/gallery-4-dinner.webp" type="image/webp">
+            <img src="assets/images/gallery/gallery-4-dinner.jpg" alt="Cena romántica con velas y vista nocturna" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-tag" data-i18n="gallery_tag_4">Gastronomía de Autor</span>
+            <h4 class="gallery-name" data-i18n="gallery_name_4">Cenas Privadas en Terraza</h4>
+          </figcaption>
+        </figure>
+
+        <!-- Foto 5: Noche Estrellada & Telescopio -->
+        <figure class="gallery-item gallery-clickable" data-index="4" data-caption="Observación astronómica guiada bajo la Vía Láctea con telescopio óptico profesional y fogata.">
+          <picture>
+            <source srcset="assets/images/gallery/gallery-5-stargazing.webp" type="image/webp">
+            <img src="assets/images/gallery/gallery-5-stargazing.jpg" alt="Cielo estrellado con domos y fogata" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-tag" data-i18n="gallery_tag_5">Stargazing</span>
+            <h4 class="gallery-name" data-i18n="gallery_name_5">Noches de Vía Láctea &amp; Fogata</h4>
+          </figcaption>
+        </figure>
+
+        <!-- Foto 6: Desayuno Campestre en Balcón -->
+        <figure class="gallery-item gallery-clickable" data-index="5" data-caption="Desayuno artesanal con pan caliente, frutas andinas, café de altura y vista a los cañones del Ilaló.">
+          <picture>
+            <source srcset="assets/images/gallery/gallery-6-breakfast.webp" type="image/webp">
+            <img src="assets/images/gallery/gallery-6-breakfast.jpg" alt="Desayuno orgánico en balcón de madera" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-tag" data-i18n="gallery_tag_6">Sabores Locales</span>
+            <h4 class="gallery-name" data-i18n="gallery_name_6">Desayuno de Campo en Balcón</h4>
+          </figcaption>
+        </figure>
+
+        <!-- Foto 7: Masaje Terapéutico Volcánico -->
+        <figure class="gallery-item gallery-clickable" data-index="6" data-caption="Masaje descontracturante con piedras calientes de basalto volcánico en pabellón abierto.">
+          <picture>
+            <source srcset="assets/images/gallery/gallery-7-massage.webp" type="image/webp">
+            <img src="assets/images/gallery/gallery-7-massage.jpg" alt="Masaje con piedras calientes en spa" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-tag" data-i18n="gallery_tag_7">Wellness Holístico</span>
+            <h4 class="gallery-name" data-i18n="gallery_name_7">Terapia con Piedras Volcánicas</h4>
+          </figcaption>
+        </figure>
+
+        <!-- Foto 8: Senderismo & Cumbre Ilaló -->
+        <figure class="gallery-item gallery-clickable" data-index="7" data-caption="Rutas ecológicas y trekking hasta la cumbre del Volcán Ilaló con vista al volcán Cotopaxi.">
+          <picture>
+            <source srcset="assets/images/gallery/gallery-8-hiking.webp" type="image/webp">
+            <img src="assets/images/gallery/gallery-8-hiking.jpg" alt="Pareja caminando en cresta del Ilaló con vista al Cotopaxi" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-tag" data-i18n="gallery_tag_8">Aventura &amp; Trekking</span>
+            <h4 class="gallery-name" data-i18n="gallery_name_8">Senderos a la Cumbre del Ilaló</h4>
+          </figcaption>
+        </figure>
+
+        <!-- Foto 9: Cabaña Familiar Alpina -->
+        <figure class="gallery-item gallery-clickable" data-index="8" data-caption="Cabaña alpina de madera y cristal para familias, con fogata de piedra y jardines nativos.">
+          <picture>
+            <source srcset="assets/images/gallery/gallery-9-refugio.webp" type="image/webp">
+            <img src="assets/images/gallery/gallery-9-refugio.jpg" alt="Familia compartiendo fogata frente a cabaña alpina" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-tag" data-i18n="gallery_tag_9">Refugio Andino</span>
+            <h4 class="gallery-name" data-i18n="gallery_name_9">Cabaña Familiar &amp; Fogata</h4>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       RESEÑAS & SOCIAL PROOF
+       ========================================== -->
+  <section class="lodge-reviews-section" id="opiniones">
+    <div class="container">
+      <div class="lodge-section-header-center">
+        <span class="lodge-eyebrow" data-i18n="reviews_badge">TESTIMONIOS VERIFICADOS</span>
+        <h2 class="lodge-section-title-dark" data-i18n="reviews_title">La Experiencia de Quienes Vivieron la Magia</h2>
+        <p class="lodge-section-sub-dark" data-i18n="reviews_desc">
+          Reconocido por más de 340 huéspedes como el mejor hotel de naturaleza y spa en los alrededores de Quito.
+        </p>
+      </div>
+
+      <div class="rating-badges-row">
+        <div class="rating-badge-item">
+          <span class="rating-score">★ 5.0 / 5</span>
+          <span class="rating-platform">TripAdvisor Travellers' Choice</span>
+        </div>
+        <div class="rating-badge-item">
+          <span class="rating-score">★ 9.8 / 10</span>
+          <span class="rating-platform">Booking.com Excepcional</span>
+        </div>
+        <div class="rating-badge-item">
+          <span class="rating-score">★ 4.98 / 5</span>
+          <span class="rating-platform">Google Reviews Certificado</span>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text" data-i18n="rev_1_text">
+            "La vista desde el jacuzzi al anochecer con Quito encendiéndose a lo lejos no tiene comparación en Ecuador. El domo es súper cálido, impecable y el servicio de desayuno delicioso."
+          </p>
+          <div class="review-author">
+            <div class="avatar-initial">MC</div>
+            <div class="author-meta">
+              <h4 data-i18n="rev_1_author">María Camila &amp; Esteban</h4>
+              <span data-i18n="rev_1_meta">Celebración de Aniversario · Octubre 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text" data-i18n="rev_2_text">
+            "La atención a los detalles es de nivel mundial. Dormir mirando las estrellas a través de la cúpula y levantarse con el aroma de los eucaliptos me renovó por completo. Volveremos sin duda."
+          </p>
+          <div class="review-author">
+            <div class="avatar-initial">DS</div>
+            <div class="author-meta">
+              <h4 data-i18n="rev_2_author">David Santillán</h4>
+              <span data-i18n="rev_2_meta">Retiro Creativo &amp; Spa · Septiembre 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text" data-i18n="rev_3_text">
+            "La cena romántica fue sublime y la fogata con malvaviscos bajo la Vía Láctea superó todas nuestras expectativas. Es el mejor lodge de naturaleza de la provincia con diferencia."
+          </p>
+          <div class="review-author">
+            <div class="avatar-initial">VP</div>
+            <div class="author-meta">
+              <h4 data-i18n="rev_3_author">Valeria Paredes</h4>
+              <span data-i18n="rev_3_meta">Escapada de Fin de Semana · Agosto 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       POLÍTICAS & FAQ
+       ========================================== -->
+  <section class="lodge-faq-section" id="faq">
+    <div class="container">
+      <div class="lodge-section-header-center">
+        <span class="lodge-eyebrow" data-i18n="faq_badge">POLÍTICAS CLARAS</span>
+        <h2 class="lodge-section-title-dark" data-i18n="faq_title">Preguntas Frecuentes &amp; Políticas del Lodge</h2>
+        <p class="lodge-section-sub-dark" data-i18n="faq_desc">
+          Información esencial para que planifiques tu estadía con total tranquilidad y transparencia.
+        </p>
+      </div>
+
+      <div class="faq-accordion">
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span data-i18n="faq_q_vat">¿Aplica la exención del 15% de IVA para turistas extranjeros?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-answer" data-i18n="faq_a_vat">
+            Sí. De acuerdo con la Ley de Turismo del Ecuador, los turistas extranjeros no residentes que presenten su pasaporte físico con sello de entrada migratoria vigente de turista están 100% exentos del pago del 15% de IVA en su hospedaje.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span data-i18n="faq_q1">¿Qué horario tienen el check-in y el check-out?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-answer" data-i18n="faq_a1">
+            El horario de Check-in es a partir de las 15:00 hrs y el Check-out regular es hasta las 11:30 hrs. En los paquetes especiales el Check-out se extiende de cortesía hasta las 13:00 hrs según disponibilidad.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span data-i18n="faq_q2">¿Cómo se mantiene la temperatura dentro del domo por la noche?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-answer" data-i18n="faq_a2">
+            Todas las suites cuentan con aislamiento térmico multicapa importado, chimeneas de leña nórdicas de alto rendimiento y edredones de plumón y lana de alpaca virgen. La temperatura interior se mantiene templada y confortable (21°C a 23°C).
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span data-i18n="faq_q3">¿El jacuzzi de cedro es 100% privado en cada cabaña?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-answer" data-i18n="faq_a3">
+            Totalmente. Cada suite dispone de su propia tina nórdica o hidromasaje exclusivo en su terraza privada. El agua se renueva y desinfecta cuidadosamente antes de cada llegada y se calienta a 38°C para tu hora solicitada.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span data-i18n="faq_q4">¿Aceptan mascotas (Pet Friendly)?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-answer" data-i18n="faq_a4">
+            En la cabaña Bosque Nativo aceptamos perritos de razas pequeñas y medianas educados previa notificación. En las áreas comunes y suites Volcán Master se preserva el espacio libre de mascotas por estrictas normas de bienestar y alergias.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER & BRANDING (ATRIBUCIÓN DEV.ALEX)
+       ========================================== -->
+  <footer class="lodge-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="lodge-logo mb-md">
+            <span class="lodge-logo-title">ILALÓ</span>
+            <span class="lodge-logo-subtitle">LODGE &amp; SPA</span>
+          </div>
+          <p class="footer-brand-desc" data-i18n="footer_desc">
+            Santuario de alta montaña donde el confort de lujo y la inmensidad del cielo andino se encuentran. Hospitalidad consciente, spa termal y preservación sustentable del Volcán Ilaló.
+          </p>
+          <div class="footer-location-note" data-i18n="footer_address">
+            Puerto / Sector La Cruz, Volcán Ilaló · Tumbaco, Quito · Pichincha, Ecuador
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_nav_title">Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="#hero" class="footer-link" data-i18n="nav_home">Inicio</a></li>
+            <li><a href="#cabañas" class="footer-link" data-i18n="footer_nav_domes">Cabañas &amp; Domos</a></li>
+            <li><a href="#spa" class="footer-link" data-i18n="footer_nav_spa">Spa &amp; Hidroterapia</a></li>
+            <li><a href="#paquetes" class="footer-link" data-i18n="footer_nav_packages">Paquetes Especiales</a></li>
+            <li><a href="#galeria" class="footer-link" data-i18n="footer_nav_gallery">Galería Fotográfica</a></li>
+            <li><a href="#restaurante" class="footer-link" data-i18n="footer_nav_gastro">Restaurante El Huerto</a></li>
+            <li><a href="#reservar" class="footer-link" data-i18n="footer_nav_calc">Cotizador en Línea</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_contact_title">Contacto &amp; Reservas</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+593999999999" class="footer-link footer-link-action">📞 +593 99 999 9999 (Recepción &amp; WhatsApp)</a></li>
+            <li><a href="mailto:reservas@ilalolodge.com" class="footer-link footer-link-action">✉️ reservas@ilalolodge.com</a></li>
+            <li><span class="footer-link" data-i18n="footer_contact_reception">⏰ Atención Concierge: 08:00 - 22:00</span></li>
+            <li><a href="https://maps.google.com/?q=-0.2621,-78.3752" target="_blank" rel="noopener noreferrer" class="footer-link footer-link-action">📍 Sector La Cruz, Laderas del Ilaló, Tumbaco</a></li>
+            <li><a href="https://wa.me/593999999999?text=Hola%20Ilal%C3%B3%20Lodge%2C%20deseo%20información%20sobre%20el%20servicio%20de%20transfer." target="_blank" rel="noopener noreferrer" class="footer-link footer-link-action" data-i18n="footer_contact_shuttle">🚐 Servicio de Transfer Aeropuerto UIO Disponible</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_sust_title">Sostenibilidad &amp; Sellos</h4>
+          <p class="footer-sust-desc" data-i18n="footer_sust_desc">
+            Operamos con energía solar limpia, biogestión de aguas para reforestación nativa y productos orgánicos de comercio justo de productores del valle.
+          </p>
+          <div class="footer-badges-wrap">
+            <span class="badge-eco" data-i18n="footer_badge_eco">
+              🌿 100% Eco-Lodge Sustentable
+            </span>
+            <span class="badge-award" data-i18n="footer_badge_top">
+              ⭐ Travellers' Choice 2026
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div data-i18n="footer_rights">
+          &copy; 2026 ILALÓ LODGE &amp; SPA™. Todos los derechos reservados. Puerto La Cruz, Tumbaco, Ecuador.
+        </div>
+
+        <!-- Dev.Alex Signature Requirement -->
+        <div class="dev-signature">
+          <span data-i18n="footer_dev_text">Diseñado &amp; Desarrollado por:</span>
+          <strong>Dev.Alex</strong>
+          <code>dev.alex.pro</code>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       STICKY BOTTOM BAR (MOBILE BOOKING CTA)
+       ========================================== -->
+  <aside class="sticky-booking-bar" id="stickyBookingBar" aria-label="Barra de reserva rápida">
+    <div class="sticky-bar-inner">
+      <div class="sticky-bar-price">
+        <span class="sticky-bar-from" data-i18n="sticky_from">Tarifa desde:</span>
+        <span class="sticky-bar-amount"><strong>$145</strong> <small>USD/noche</small></span>
+      </div>
+      <div class="sticky-bar-actions">
+        <a href="https://wa.me/593999999999?text=Hola%20Ilal%C3%B3%20Lodge%20%26%20Spa%2C%20deseo%20consultar%20disponibilidad." target="_blank" rel="noopener noreferrer" class="sticky-bar-whatsapp" aria-label="Contactar por WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.42c-1.45 0-2.88-.38-4.14-1.11l-.3-.17-3.12.82.83-3.04-.19-.31a8.21 8.21 0 0 1-1.25-4.44c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8.6.26 1.07.42 1.44.54.6.19 1.15.17 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+        </a>
+        <a href="#reservar" class="lodge-pill-btn lodge-pill-btn-green sticky-bar-cta" data-i18n="sticky_btn">Reservar Ahora</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Modal de Video Tour HD: Volcán Master Suite & Spa -->
+  <dialog class="modal-dialog-native modal-video-dialog" id="domeVisualizerModal" aria-labelledby="visualizerTitle">
+    <div class="video-modal-inner">
+      <button type="button" class="modal-close-btn" id="visualizerCloseBtn" aria-label="Cerrar video">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="video-modal-header">
+        <span class="lodge-eyebrow">TOUR EN VIDEO EXCLUSIVO</span>
+        <h3 id="visualizerTitle" class="visualizer-title">Volcán Master Suite &amp; Spa</h3>
+        <p id="visualizerSubtitle" class="visualizer-subtitle">Suite Signature con tina nórdica privada de cedro, chimenea a leña y vistas panorámicas.</p>
+      </div>
+
+      <div class="video-modal-player-wrap">
+        <video 
+          id="visualizerVideo" 
+          class="video-modal-player" 
+          src="assets/videos/volcan-master-suite.mp4" 
+          controls 
+          autoplay 
+          playsinline 
+          preload="auto">
+          <track kind="captions" src="data:text/vtt,WEBVTT" srclang="es" label="Español" default>
+        </video>
+      </div>
+
+      <div class="video-modal-footer">
+        <div class="visualizer-price-info">
+          <span class="visualizer-rate-label">Tarifa por noche:</span>
+          <span class="visualizer-price" id="visualizerPrice">$195</span>
+          <span class="visualizer-period">USD</span>
+        </div>
+        <a href="#reservar" class="lodge-pill-btn lodge-pill-btn-green" id="visualizerBookBtn" onclick="document.getElementById('domeVisualizerModal').close();">
+          Reservar Volcán Master Suite
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal de Galería Lightbox (Visor de Fotos en Alta Definición) -->
+  <dialog class="modal-dialog-native modal-lightbox-dialog" id="galleryLightboxModal" aria-label="Visor de Fotos">
+    <div class="lightbox-inner">
+      <button type="button" class="modal-close-btn" id="lightboxCloseBtn" aria-label="Cerrar visor">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="lightbox-img-wrap">
+        <img id="lightboxImg" src="" alt="Foto de Galería Ilaló Lodge" class="lightbox-img">
+      </div>
+
+      <div class="lightbox-caption-bar">
+        <p id="lightboxCaption" class="lightbox-caption"></p>
+        <div class="lightbox-counter">
+          <span id="lightboxIndex">1</span> / <span>9</span>
+        </div>
+      </div>
+
+      <button type="button" class="lightbox-nav-btn lightbox-prev" id="lightboxPrevBtn" aria-label="Foto anterior">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <button type="button" class="lightbox-nav-btn lightbox-next" id="lightboxNextBtn" aria-label="Foto siguiente">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+  </dialog>
+</body>
+</html>

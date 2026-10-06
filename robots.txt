@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ilalo-lodge-spa.vercel.app/sitemap.xml

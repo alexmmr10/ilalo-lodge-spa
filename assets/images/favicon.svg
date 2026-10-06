@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="ilaloGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#355e34"/>
+      <stop offset="100%" stop-color="#1a3219"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Circle -->
+  <circle cx="32" cy="32" r="30" fill="url(#ilaloGrad)" stroke="#e6a15c" stroke-width="2"/>
+  <!-- Mountain Volcanic Silhouette -->
+  <polygon points="12,46 28,22 36,32 44,20 54,46" fill="#f3f5ed" opacity="0.95"/>
+  <!-- Geodesic Dome Arc -->
+  <path d="M22 46 A 10 10 0 0 1 42 46 Z" fill="#e6a15c" opacity="0.85"/>
+  <!-- Thermal Steam Curves -->
+  <path d="M30 18 Q32 14 30 10" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <path d="M34 19 Q36 15 34 11" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <!-- Star -->
+  <polygon points="46,12 47.5,15.5 51,15.5 48,17.5 49.5,21 46,19 42.5,21 44,17.5 41,15.5 44.5,15.5" fill="#f59e0b"/>
+</svg>

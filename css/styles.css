@@ -1,0 +1,2852 @@
+/* ==========================================================================
+   ILALÓ LODGE & SPA™ · LUXURY MOUNTAIN RESORT STYLESHEET
+   Design & Architecture: Dev.Alex (dev.alex.pro)
+   Style Standard: Inspired by El Jardín Lodge & Spa™ (eljardinlodge.com)
+   Palette:
+     - Organic Warm Ecru / Cream (#f3f5ed / #f7f8f2)
+     - Andean Forest Green (#355e34 / #284a27)
+     - Midnight Charcoal (#1c241e / #111111)
+     - Alpine Terracotta / Amber (#d97736 / #e6a15c)
+     - Pure White (#ffffff)
+   Themes: Light Organic Andean (Default) & Dark Mountain Luxury
+   ========================================================================== */
+
+/* ---------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES & TOKENS
+   --------------------------------------------------------- */
+:root {
+  /* Color Palette (Default Organic Andean Cream & Forest Green) */
+  --color-bg-cream: #f3f5ed;
+  --color-bg-white: #ffffff;
+  --color-bg-surface: #eaece3;
+  --color-bg-dark: #0f1613;
+
+  --color-forest: #355e34;
+  --color-forest-dark: #264625;
+  --color-forest-deep: #1a3219;
+  --color-forest-light: #467a45;
+  --color-forest-muted: #5e7364;
+
+  --color-charcoal-dark: #1c241e;
+  --color-charcoal-body: #4a554e;
+  --color-charcoal-muted: #727f77;
+  --color-border-light: rgba(0, 0, 0, 0.08);
+
+  --color-amber: #d97736;
+  --color-gold: #e6a15c;
+  --color-rating: #f59e0b;
+  --color-success: #10b981;
+
+  /* Header tokens */
+  --header-height: 80px;
+  --header-bg-scrolled: rgba(18, 28, 22, 0.94);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-body: 'Mulish', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Parkinsans', 'Mulish', sans-serif;
+
+  /* Radius */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.09);
+  --shadow-lg: 0 18px 40px rgba(0, 0, 0, 0.14);
+  --shadow-pill: 0 6px 20px rgba(53, 94, 52, 0.28);
+  --shadow-dark: 0 16px 45px rgba(0, 0, 0, 0.45);
+
+  /* Transitions */
+  --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+  --color-bg-cream: #121a16;
+  --color-bg-white: #17221d;
+  --color-bg-surface: #1e2c26;
+  --color-charcoal-dark: #f5f4ef;
+  --color-charcoal-body: #a7b3ac;
+  --color-charcoal-muted: #798880;
+  --color-border-light: rgba(255, 255, 255, 0.09);
+  --color-forest: #488646;
+  --color-forest-dark: #376a36;
+}
+
+/* ---------------------------------------------------------
+   2. CSS RESET & CORE BOX MODEL
+   --------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background-color: var(--color-bg-cream);
+  color: var(--color-charcoal-dark);
+  font-family: var(--font-body);
+  transition: background-color var(--transition-smooth), color var(--transition-smooth);
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  background-color: var(--color-bg-cream);
+  color: var(--color-charcoal-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input, textarea, select, button {
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.mb-md {
+  margin-bottom: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-success {
+  color: var(--color-success);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------
+   3. HEADER & NAVIGATION BAR (SCREENSHOT 1 EXACT REPLICA)
+   --------------------------------------------------------- */
+.lodge-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  padding: 24px 36px;
+  transition: background var(--transition-smooth), padding var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.lodge-header.scrolled {
+  background: var(--header-bg-scrolled);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  padding: 14px 36px;
+  box-shadow: 0 4px 26px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 768px) {
+  .lodge-header {
+    padding: 16px 20px;
+  }
+  .lodge-header.scrolled {
+    padding: 12px 20px;
+  }
+}
+
+.lodge-header-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left Column: Navigation Links */
+.lodge-nav {
+  flex: 1;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .lodge-nav {
+    display: block;
+  }
+}
+
+.lodge-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.lodge-nav-link {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 4px 0 6px;
+  position: relative;
+  transition: opacity var(--transition-fast);
+  white-space: nowrap;
+}
+
+.lodge-nav-link:hover {
+  opacity: 0.85;
+}
+
+.lodge-nav-link.active {
+  border-bottom: 2px solid #ffffff;
+}
+
+/* Center Column: Refined Serif Logo */
+.lodge-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  padding: 0 16px;
+}
+
+.lodge-logo-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #ffffff;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .lodge-logo-title {
+    font-size: 22px;
+  }
+}
+
+.lodge-logo-subtitle {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.88);
+  margin-top: 4px;
+}
+
+/* ---------------------------------------------------------
+   GLOBAL FOCUS VISIBLE (Accessibility WCAG 2.2 AA)
+   --------------------------------------------------------- */
+:focus-visible {
+  outline: 2.5px solid var(--color-forest);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] :focus-visible {
+  outline-color: #62bd7e;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Right Column: Social Circle Outline Buttons & Toggles */
+.lodge-header-actions {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.social-circle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: transparent;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.social-circle-btn:hover {
+  background: #ffffff;
+  color: #254a27;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.social-circle-btn:active {
+  transform: scale(0.95);
+}
+
+/* Theme toggle icons */
+svg.theme-icon-sun,
+svg.theme-icon-moon {
+  width: 17px;
+  height: 17px;
+  display: block;
+  pointer-events: none;
+}
+
+span.theme-icon-sun,
+span.theme-icon-moon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+
+/* En modo oscuro: mostrar icono sol (para cambiar a claro) */
+[data-theme="dark"] svg.theme-icon-moon,
+[data-theme="dark"] span.theme-icon-moon {
+  display: none !important;
+}
+[data-theme="dark"] svg.theme-icon-sun {
+  display: block !important;
+}
+[data-theme="dark"] span.theme-icon-sun {
+  display: inline-flex !important;
+}
+
+/* En modo claro: mostrar icono luna (para cambiar a oscuro) */
+:root:not([data-theme="dark"]) svg.theme-icon-sun,
+:root:not([data-theme="dark"]) span.theme-icon-sun {
+  display: none !important;
+}
+:root:not([data-theme="dark"]) svg.theme-icon-moon {
+  display: block !important;
+}
+:root:not([data-theme="dark"]) span.theme-icon-moon {
+  display: inline-flex !important;
+}
+
+/* Estilo destacado del botón de tema */
+.theme-toggle-btn {
+  background: #19221d;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle-btn:hover {
+  background: #ffffff;
+  color: #1f3a23;
+  border-color: #ffffff;
+}
+
+[data-theme="dark"] .theme-toggle-btn {
+  background: #15221b;
+  border-color: #62bd7e;
+  color: #ffd0a0;
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover {
+  background: #62bd7e;
+  color: #0b0f0e;
+  border-color: #62bd7e;
+}
+
+/* Mobile Menu Burger */
+.mobile-menu-burger {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 6px;
+}
+
+@media (max-width: 1023px) {
+  .mobile-menu-burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lodge-header-actions .social-circle-btn:not(#themeToggle) {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------
+   4. MOBILE DRAWER NAVIGATION
+   --------------------------------------------------------- */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(85vw, 360px);
+  background: #141d19;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 36px 28px;
+  z-index: 2001;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(100%);
+  transition: transform var(--transition-smooth);
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.mobile-nav.active {
+  transform: translateX(0);
+}
+
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth);
+}
+
+.mobile-nav-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  display: block;
+  padding: 6px 0;
+  transition: color var(--transition-fast);
+}
+
+.mobile-nav-link:hover {
+  color: var(--color-gold);
+}
+
+.mobile-nav-footer {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mobile-theme-btn {
+  background: #19221d;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background var(--transition-fast);
+}
+
+.mobile-theme-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* ---------------------------------------------------------
+   5. FLOATING BOTTOM-LEFT LANGUAGE SELECTOR (SCREENSHOT 1 & 2)
+   --------------------------------------------------------- */
+.lodge-lang-widget {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 999;
+  background: #ffffff;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.lodge-lang-widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.3);
+}
+
+.lang-flag {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.lang-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.lang-chevron {
+  width: 10px;
+  height: 10px;
+  color: #555555;
+  transition: transform var(--transition-fast);
+}
+
+/* ---------------------------------------------------------
+   NAV ACTIVE LINK STATE (updated dynamically via IntersectionObserver)
+   --------------------------------------------------------- */
+.lodge-nav-link.is-active {
+  color: var(--color-forest);
+  font-weight: 700;
+}
+
+[data-theme="dark"] .lodge-nav-link.is-active {
+  color: #62bd7e;
+}
+
+.lodge-nav-link.is-active::after {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------
+   6. FLOATING RIGHT-EDGE WHATSAPP TAB (SCREENSHOTS 1, 2, 3, 4)
+   --------------------------------------------------------- */
+.lodge-whatsapp-widget {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  background: #234725;
+  color: #ffffff;
+  width: 44px;
+  height: 50px;
+  border-radius: 8px 0 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -3px 4px 16px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  transition: width var(--transition-fast), background var(--transition-fast);
+}
+
+.lodge-whatsapp-widget:hover {
+  background: #2d5a30;
+  width: 50px;
+}
+
+.whatsapp-status-dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 6px;
+  height: 6px;
+  background: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #25d366;
+  animation: pulseDot 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.65;
+  }
+}
+
+/* ---------------------------------------------------------
+   7. HERO FULLSCREEN (SCREENSHOT 1 & 2 EXACT REPLICA)
+   --------------------------------------------------------- */
+.lodge-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.lodge-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.lodge-hero-img,
+.lodge-hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.lodge-hero-video {
+  transform: scale(1.01);
+  will-change: transform;
+}
+
+.lodge-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.08) 35%,
+    rgba(0, 0, 0, 0.45) 68%,
+    rgba(0, 0, 0, 0.82) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.lodge-hero-content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 0 6% 54px 7%;
+  max-width: 1100px;
+}
+
+.lodge-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Universal Pill Buttons */
+.lodge-pill-btn {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  padding: 13px 32px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  will-change: transform;
+}
+
+.lodge-pill-btn:hover {
+  transform: translateY(-2px);
+}
+
+.lodge-pill-btn:active {
+  transform: scale(0.97);
+}
+
+/* White Pill Button (Screenshot 2 — Hero Primary CTA) */
+.lodge-pill-btn-white {
+  background: #ffffff;
+  color: #2b562a;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+}
+
+.lodge-pill-btn-white:hover {
+  background: #fafafa;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.32);
+}
+
+/* Ghost Pill Button (Hero Secondary CTA — transparent outline) */
+.lodge-pill-btn-ghost {
+  background: rgba(14, 20, 16, 0.55);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: none;
+}
+
+.lodge-pill-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.88);
+}
+
+/* Forest Green Pill Button (Screenshots 3 & 4) */
+.lodge-pill-btn-green {
+  background: var(--color-forest);
+  color: #ffffff;
+  box-shadow: var(--shadow-pill);
+}
+
+.lodge-pill-btn-green:hover {
+  background: var(--color-forest-dark);
+  box-shadow: 0 8px 24px rgba(53, 94, 52, 0.4);
+}
+
+/* Hero CTA Row — holds primary + secondary CTA buttons */
+.lodge-hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* Large Bold Headline (Screenshot 2) */
+.lodge-hero-headline {
+  font-family: var(--font-body);
+  font-size: clamp(1.9rem, 3.8vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.16;
+  color: #ffffff;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.65);
+  max-width: 860px;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* Responsive Scroll Indicator on Right Edge (replaces .lodge-touch-indicator) */
+.lodge-scroll-indicator {
+  position: absolute;
+  right: 28px;
+  bottom: 40px;
+  top: auto;
+  transform: rotate(180deg);
+  z-index: 10;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.75;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.lodge-scroll-indicator.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* On desktop (>=768px): show SCROLL, hide TOUCH */
+.scroll-indicator-mobile { display: none; }
+.scroll-indicator-desktop { display: inline; }
+
+@media (max-width: 767px) {
+  .lodge-scroll-indicator {
+    right: 14px;
+    bottom: 28px;
+  }
+  .scroll-indicator-mobile { display: inline; }
+  .scroll-indicator-desktop { display: none; }
+}
+
+/* Legacy class kept for backward compatibility (hidden) */
+.lodge-touch-indicator { display: none; }
+
+/* ---------------------------------------------------------
+   8. BOOKING AVAILABILITY BAR (AMENITIZ ENGINE STYLE)
+   --------------------------------------------------------- */
+.lodge-booking-bar-section {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 24px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: background var(--transition-smooth);
+}
+
+[data-theme="dark"] .lodge-booking-bar-section {
+  background: #141d19;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lodge-booking-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+@media (min-width: 768px) {
+  .lodge-booking-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lodge-booking-bar {
+    grid-template-columns: 1.2fr 1.2fr 1fr 1.3fr auto;
+    gap: 20px;
+  }
+}
+
+.lodge-book-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lodge-book-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-forest);
+}
+
+[data-theme="dark"] .lodge-book-label {
+  color: #62bd7e;
+}
+
+.lodge-book-input {
+  background: #f7f9f6;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #1a1a1a;
+  outline: none;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+[data-theme="dark"] .lodge-book-input {
+  background: #1a2520;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #f5f4ef;
+}
+
+.lodge-book-input:focus {
+  border-color: var(--color-forest);
+  background: #ffffff;
+}
+
+[data-theme="dark"] .lodge-book-input:focus {
+  border-color: #62bd7e;
+  background: #202d27;
+}
+
+.lodge-book-submit-btn {
+  background: var(--color-forest);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(53, 94, 52, 0.3);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  height: 47px;
+}
+
+.lodge-book-submit-btn:hover {
+  background: var(--color-forest-dark);
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------------
+   9. SPLIT SECTIONS 50/50 (SCREENSHOTS 3 & 4 EXACT REPLICA)
+   --------------------------------------------------------- */
+.lodge-split-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 580px;
+  overflow: hidden;
+  transition: background-color var(--transition-smooth);
+}
+
+@media (min-width: 900px) {
+  .lodge-split-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.lodge-split-col {
+  width: 100%;
+  position: relative;
+}
+
+/* Text Column on Cream Background */
+.lodge-split-text-col {
+  background-color: var(--color-bg-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 8% 80px 10%;
+  transition: background-color var(--transition-smooth);
+}
+
+.lodge-split-inner {
+  max-width: 520px;
+  width: 100%;
+}
+
+.lodge-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-forest);
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .lodge-eyebrow {
+  color: #62bd7e;
+}
+
+.lodge-split-title {
+  font-family: var(--font-body);
+  font-size: clamp(2rem, 3.2vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--color-charcoal-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 22px;
+}
+
+.lodge-split-desc {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--color-charcoal-body);
+  margin-bottom: 34px;
+  max-width: 46ch;
+  font-weight: 400;
+}
+
+/* Media Column with Full Bleed Photo */
+.lodge-split-media-col {
+  min-height: 380px;
+  overflow: hidden;
+  position: relative;
+}
+
+.lodge-split-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lodge-split-media-col:hover .lodge-split-img {
+  transform: scale(1.04);
+}
+
+/* Reversed Split (Screenshot 4 - Gastronomía) */
+@media (min-width: 900px) {
+  .lodge-split-reversed .lodge-split-media-col {
+    order: 1;
+  }
+  .lodge-split-reversed .lodge-split-text-col {
+    order: 2;
+    padding: 80px 10% 80px 8%;
+  }
+}
+
+/* ---------------------------------------------------------
+   SPA CINEMATIC ANIMATIONS (STARS & HYDROTHERMAL STEAM)
+   --------------------------------------------------------- */
+.spa-animated-media {
+  position: relative;
+  overflow: hidden;
+  background: #06090b;
+}
+
+/* Canvas de cielo estrellado interactivo y realista */
+.spa-stars-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%; /* Cubre la zona superior del cielo nocturno y la Vía Láctea */
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: screen;
+}
+
+/* Contenedor del vapor de agua termal de la tina de cedro */
+.spa-steam-overlay {
+  position: absolute;
+  bottom: 8%;
+  right: 6%;
+  width: 52%;
+  height: 58%;
+  pointer-events: none;
+  z-index: 3;
+  overflow: visible;
+}
+
+/* Penachos de vapor orgánico con desenfoque gaussiano y gradientes radiales suaves */
+.steam-plume {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 248, 235, 0.22) 40%, rgba(255, 255, 255, 0) 75%);
+  -webkit-filter: blur(14px);
+  filter: blur(14px);
+  opacity: 0;
+  transform-origin: bottom center;
+  will-change: transform, opacity;
+  animation-name: spaSteamRise;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.steam-p1 {
+  width: 130px;
+  height: 190px;
+  left: 28%;
+  animation-duration: 4.8s;
+  animation-delay: 0s;
+}
+
+.steam-p2 {
+  width: 170px;
+  height: 220px;
+  left: 36%;
+  animation-duration: 5.6s;
+  animation-delay: 1.2s;
+  filter: blur(18px);
+}
+
+.steam-p3 {
+  width: 110px;
+  height: 160px;
+  left: 20%;
+  animation-duration: 4.2s;
+  animation-delay: 2.3s;
+}
+
+.steam-p4 {
+  width: 150px;
+  height: 200px;
+  left: 45%;
+  animation-duration: 5.2s;
+  animation-delay: 3.1s;
+  filter: blur(16px);
+}
+
+.steam-p5 {
+  width: 180px;
+  height: 240px;
+  left: 25%;
+  animation-duration: 6.2s;
+  animation-delay: 1.8s;
+  filter: blur(20px);
+}
+
+@keyframes spaSteamRise {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.65) rotate(0deg);
+  }
+  20% {
+    opacity: 0.65;
+  }
+  55% {
+    opacity: 0.45;
+    transform: translateY(-80px) scale(1.15) rotate(4deg);
+  }
+  85% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-170px) scale(1.55) rotate(-6deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .steam-plume {
+    animation: none;
+    opacity: 0.25;
+    transform: translateY(-40px) scale(1);
+  }
+}
+
+/* ---------------------------------------------------------
+   GASTRONOMY ANIMATIONS (CINEMATIC 4K LIGHTS & FLAMES CANVAS)
+   --------------------------------------------------------- */
+.gastro-animated-media {
+  position: relative;
+  overflow: hidden;
+  background: #0d1217;
+}
+
+/* Canvas óptico para renderizar la refracción y el resplandor natural */
+.gastro-lights-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  mix-blend-mode: screen;
+}
+
+/* ---------------------------------------------------------
+   10. SHOWCASE DE CABAÑAS & DOMOS (WITH VIDEO PREVIEW)
+   --------------------------------------------------------- */
+.lodge-showcase-section {
+  padding: 96px 0;
+  background: #ffffff;
+  transition: background-color var(--transition-smooth);
+}
+
+[data-theme="dark"] .lodge-showcase-section {
+  background: #0b0f0e;
+}
+
+.lodge-section-header-center {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 60px;
+}
+
+.lodge-section-title-dark {
+  font-family: var(--font-body);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--color-charcoal-dark);
+  margin: 12px 0 16px;
+  line-height: 1.2;
+}
+
+.lodge-section-sub-dark {
+  font-size: 1.05rem;
+  color: var(--color-charcoal-muted);
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.lodge-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .lodge-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .lodge-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.lodge-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+[data-theme="dark"] .lodge-card {
+  background: #131917;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-dark);
+}
+
+.lodge-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(53, 94, 52, 0.4);
+}
+
+[data-theme="dark"] .lodge-card:hover {
+  border-color: rgba(72, 134, 70, 0.5);
+}
+
+.lodge-card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  cursor: pointer;
+  background: #111111;
+  border: none;
+  padding: 0;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.lodge-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lodge-card-media:hover .lodge-card-img {
+  transform: scale(1.08);
+}
+
+/* User Video Preview on Dome Cards */
+.dome-card-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.lodge-card-media:hover .dome-card-video,
+.lodge-card-media.playing .dome-card-video {
+  opacity: 1;
+}
+
+.dome-video-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(18, 28, 22, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  z-index: 5;
+}
+
+.video-dot {
+  width: 7px;
+  height: 7px;
+  background: #ff4757;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ff4757;
+  animation: videoDotBlink 1.4s infinite ease-in-out;
+}
+
+@keyframes videoDotBlink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.lodge-card-tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(18, 28, 22, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  z-index: 5;
+}
+
+.lodge-card-price-pill {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(19, 25, 23, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.02em;
+}
+
+.dome-media-hint {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  z-index: 4;
+}
+
+.lodge-card-media:hover .dome-media-hint {
+  opacity: 1;
+}
+
+.dome-media-hint-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  background: rgba(19, 25, 23, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.lodge-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.lodge-eyebrow-sm {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-forest);
+  margin-bottom: 6px;
+}
+
+[data-theme="dark"] .lodge-eyebrow-sm {
+  color: #62bd7e;
+}
+
+.lodge-card-title {
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-charcoal-dark);
+  margin-bottom: 6px;
+}
+
+.lodge-card-spec {
+  font-size: 13px;
+  color: var(--color-charcoal-muted);
+  margin-bottom: 16px;
+}
+
+.lodge-amenities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: var(--color-charcoal-body);
+}
+
+.lodge-card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 18px;
+}
+
+[data-theme="dark"] .lodge-card-footer {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+.lodge-card-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.lodge-price-val {
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-charcoal-dark);
+}
+
+.lodge-price-unit {
+  font-size: 11px;
+  color: var(--color-charcoal-muted);
+}
+
+.lodge-card-select-btn {
+  background: var(--color-forest);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.lodge-card-select-btn:hover {
+  background: var(--color-forest-dark);
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------------
+   11. PAQUETES EXCLUSIVOS (TODO INCLUIDO)
+   --------------------------------------------------------- */
+.lodge-packages-section {
+  padding: 96px 0;
+  background: var(--color-bg-cream);
+  transition: background-color var(--transition-smooth);
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+@media (min-width: 992px) {
+  .packages-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.package-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+[data-theme="dark"] .package-card {
+  background: #141d19;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-dark);
+}
+
+.package-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-forest);
+  box-shadow: var(--shadow-md);
+}
+
+.package-card.featured {
+  border: 2px solid var(--color-forest);
+  box-shadow: 0 12px 36px rgba(53, 94, 52, 0.18);
+}
+
+.package-header {
+  margin-bottom: 24px;
+}
+
+.package-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(53, 94, 52, 0.1);
+  border: 1px solid rgba(53, 94, 52, 0.3);
+  color: var(--color-forest);
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .package-tag {
+  color: #62bd7e;
+  border-color: rgba(98, 189, 126, 0.4);
+}
+
+.package-tag-gold {
+  background: rgba(217, 119, 54, 0.12);
+  border-color: rgba(217, 119, 54, 0.35);
+  color: var(--color-amber);
+}
+
+.package-title {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-charcoal-dark);
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.package-subtitle {
+  font-size: 13px;
+  color: var(--color-charcoal-muted);
+  margin-bottom: 18px;
+}
+
+.package-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .package-price-wrap {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.package-price {
+  font-family: var(--font-body);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--color-forest);
+  line-height: 1;
+}
+
+[data-theme="dark"] .package-price {
+  color: #62bd7e;
+}
+
+.package-price-currency {
+  font-size: 12px;
+  color: var(--color-charcoal-muted);
+}
+
+.package-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+  font-size: 14px;
+  color: var(--color-charcoal-body);
+  flex-grow: 1;
+}
+
+/* ---------------------------------------------------------
+   12. RESERVATION ENGINE & QUOTE CALCULATOR
+   --------------------------------------------------------- */
+.lodge-booking-calculator-section {
+  padding: 96px 0;
+  background: #ffffff;
+  transition: background-color var(--transition-smooth);
+}
+
+[data-theme="dark"] .lodge-booking-calculator-section {
+  background: #0b0f0e;
+}
+
+/* Foreign tourist tax exemption callout */
+.vat-policy-callout {
+  background: rgba(53, 94, 52, 0.08);
+  border: 1px solid rgba(53, 94, 52, 0.25);
+  border-radius: var(--radius-md);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+[data-theme="dark"] .vat-policy-callout {
+  background: rgba(98, 189, 126, 0.1);
+  border-color: rgba(98, 189, 126, 0.3);
+}
+
+.vat-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--color-forest);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.vat-policy-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-charcoal-dark);
+}
+
+.vat-policy-text strong {
+  color: var(--color-forest);
+}
+
+[data-theme="dark"] .vat-policy-text strong {
+  color: #62bd7e;
+}
+
+.calculator-box {
+  background: var(--color-bg-cream);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+[data-theme="dark"] .calculator-box {
+  background: #141d19;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 992px) {
+  .calculator-layout {
+    display: grid;
+    grid-template-columns: 1.25fr 0.85fr;
+    gap: 40px;
+  }
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-charcoal-muted);
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  color: var(--color-charcoal-dark);
+  font-family: var(--font-body);
+  font-size: 15px;
+  outline: none;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+[data-theme="dark"] .form-control {
+  background: #1a2520;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.form-control:focus {
+  border-color: var(--color-forest);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.addons-selection {
+  margin-top: 24px;
+}
+
+.addon-checkbox-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+[data-theme="dark"] .addon-checkbox-label {
+  background: #1a2520;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.addon-checkbox-label:hover {
+  background: #fdfdfd;
+}
+
+[data-theme="dark"] .addon-checkbox-label:hover {
+  background: #212f29;
+}
+
+.addon-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.addon-price {
+  font-weight: 700;
+  color: var(--color-forest);
+  font-size: 14px;
+}
+
+[data-theme="dark"] .addon-price {
+  color: #62bd7e;
+}
+
+/* Quote Summary Box */
+.quote-summary {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+[data-theme="dark"] .quote-summary {
+  background: #17221d;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.quote-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--color-charcoal-dark);
+}
+
+.quote-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 14px;
+  color: var(--color-charcoal-body);
+}
+
+[data-theme="dark"] .quote-line {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+.quote-line.total {
+  border-top: 2px solid var(--color-forest);
+  border-bottom: none;
+  padding-top: 18px;
+  margin-top: 12px;
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-charcoal-dark);
+}
+
+.quote-total-price {
+  color: var(--color-forest);
+  font-size: 1.5rem;
+}
+
+[data-theme="dark"] .quote-total-price {
+  color: #62bd7e;
+}
+
+.quote-actions {
+  margin-top: 24px;
+}
+
+.quote-security-note {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--color-charcoal-muted);
+}
+
+/* ---------------------------------------------------------
+   13. UBICACIÓN & TRASLADOS SECTION
+   --------------------------------------------------------- */
+.lodge-location-section {
+  padding: 96px 0;
+  background: var(--color-bg-cream);
+  transition: background-color var(--transition-smooth);
+}
+
+.location-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .location-card {
+  background: #141d19;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 992px) {
+  .location-card {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}
+
+.location-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+  font-size: 15px;
+}
+
+/* Real Google Maps embed container */
+.map-embed-container {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  height: 320px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .map-embed-container {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.map-embed-container iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: none;
+  transition: filter var(--transition-smooth);
+}
+
+[data-theme="dark"] .map-embed-container iframe {
+  filter: invert(90%) hue-rotate(180deg) contrast(0.85) saturate(0.8);
+}
+
+/* Info Overlay on top of map */
+.map-info-overlay {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(15, 22, 18, 0.88);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  pointer-events: none;
+}
+
+.map-info-pin {
+  color: #62bd7e;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.map-info-overlay .map-resort-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 2px;
+}
+
+.map-info-overlay .map-resort-altitude {
+  font-size: 11px;
+  color: #8fbe9e;
+  font-weight: 600;
+}
+
+.map-resort-title {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-charcoal-dark);
+}
+
+.map-resort-address {
+  font-size: 13px;
+  color: var(--color-charcoal-muted);
+  max-width: 32ch;
+}
+
+.map-resort-altitude {
+  font-size: 12px;
+  color: var(--color-forest);
+  font-weight: 700;
+}
+
+[data-theme="dark"] .map-resort-altitude {
+  color: #62bd7e;
+}
+
+/* ---------------------------------------------------------
+   14. TESTIMONIOS & SOCIAL PROOF
+   --------------------------------------------------------- */
+.lodge-reviews-section {
+  padding: 96px 0;
+  background: #ffffff;
+  transition: background-color var(--transition-smooth);
+}
+
+[data-theme="dark"] .lodge-reviews-section {
+  background: #0b0f0e;
+}
+
+.rating-badges-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.rating-badge-item {
+  background: var(--color-bg-cream);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-pill);
+  padding: 8px 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+[data-theme="dark"] .rating-badge-item {
+  background: #141d19;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.rating-score {
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--color-rating);
+}
+
+.rating-platform {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-charcoal-dark);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.review-card {
+  background: var(--color-bg-cream);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+[data-theme="dark"] .review-card {
+  background: #141d19;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.review-stars {
+  color: var(--color-rating);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.review-text {
+  font-size: 15px;
+  color: var(--color-charcoal-body);
+  font-style: italic;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 18px;
+}
+
+[data-theme="dark"] .review-author {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+.avatar-initial {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  flex-shrink: 0;
+  background: var(--color-forest);
+  box-shadow: 0 2px 8px rgba(53, 94, 52, 0.35);
+}
+
+/* Premium gradient avatars per review card */
+.avatar-initial:nth-of-type(1),
+.review-card:nth-child(1) .avatar-initial {
+  background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%);
+}
+.review-card:nth-child(2) .avatar-initial {
+  background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%);
+}
+.review-card:nth-child(3) .avatar-initial {
+  background: linear-gradient(135deg, #6d2b3d 0%, #b5546a 100%);
+}
+
+.author-meta h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-charcoal-dark);
+}
+
+.author-meta span {
+  font-size: 12px;
+  color: var(--color-charcoal-muted);
+}
+
+/* ---------------------------------------------------------
+   15. ACCORDION FAQ
+   --------------------------------------------------------- */
+.lodge-faq-section {
+  padding: 96px 0;
+  background: var(--color-bg-cream);
+  transition: background-color var(--transition-smooth);
+}
+
+.faq-accordion {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+[data-theme="dark"] .faq-item {
+  background: #141d19;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.faq-item[open] {
+  border-color: var(--color-forest);
+}
+
+.faq-question {
+  padding: 22px 24px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-user-select: none;
+  user-select: none;
+  color: var(--color-charcoal-dark);
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-forest);
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .faq-icon {
+  color: #62bd7e;
+}
+
+.faq-item[open] .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 24px 22px;
+  font-size: 15px;
+  color: var(--color-charcoal-body);
+  line-height: 1.6;
+}
+
+/* ---------------------------------------------------------
+   16. FOOTER & DEV.ALEX BRANDING
+   --------------------------------------------------------- */
+.lodge-footer {
+  background: #0f1613;
+  color: #b5c2ba;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.lodge-footer .lodge-logo-title {
+  color: #ffffff;
+}
+
+.lodge-footer .lodge-logo-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 640px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1.2fr 1.3fr;
+  }
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+.footer-brand-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  max-width: 36ch;
+}
+
+.footer-location-note {
+  font-size: 13px;
+  color: #8c9b92;
+}
+
+.footer-sust-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.footer-badges-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.badge-eco,
+.badge-award {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-xs);
+  background: #19221d;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  width: fit-content;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-link {
+  font-size: 14px;
+  color: #b5c2ba;
+  text-decoration: none;
+  display: block;
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: #ffffff;
+}
+
+/* Clickable contact links (tel, mailto, maps, wa) */
+a.footer-link-action {
+  color: #b5c2ba;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+a.footer-link-action:hover {
+  color: #62bd7e;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 13px;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+/* Dev.Alex Signature (WCAG AAA Compliant) */
+.dev-signature {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: #19221d;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.dev-signature strong {
+  color: #62bd7e;
+  font-weight: 700;
+}
+
+.dev-signature code {
+  color: #ffd0a0;
+  background: #332014;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+/* ---------------------------------------------------------
+   17. MODAL DE VIDEO CINEMÁTICO HD & ESTILOS DE CABAÑAS
+   --------------------------------------------------------- */
+.modal-dialog-native {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  max-width: 540px;
+  width: 90%;
+  padding: 0;
+  background: #141d19;
+  color: #ffffff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  margin: auto;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+}
+
+.modal-dialog-native::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.modal-video-dialog {
+  max-width: 960px;
+  width: 92%;
+  background: #0d1410;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85);
+  overflow: hidden;
+}
+
+.video-modal-inner {
+  padding: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .video-modal-inner {
+    padding: 32px;
+    gap: 20px;
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #1d2822;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  z-index: 20;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.video-modal-header {
+  margin-bottom: 2px;
+  padding-right: 48px;
+}
+
+.visualizer-title {
+  font-family: var(--font-body);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.visualizer-subtitle {
+  font-size: 14px;
+  color: #a7b3ac;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Contenedor y reproductor de video HD 16:9 */
+.video-modal-player-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+}
+
+.video-modal-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-modal-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 16px;
+}
+
+@media (min-width: 600px) {
+  .video-modal-footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.visualizer-price-info {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.visualizer-rate-label {
+  font-size: 13px;
+  color: #8c9b92;
+}
+
+.visualizer-price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.visualizer-period {
+  font-size: 13px;
+  color: #8c9b92;
+}
+
+/* Interacción con tarjeta de cabaña */
+.lodge-card-clickable {
+  cursor: pointer;
+  position: relative;
+}
+
+.lodge-card-clickable:focus-visible {
+  outline: 3px solid var(--color-forest);
+  outline-offset: 4px;
+}
+
+/* ---------------------------------------------------------
+   15. GALLERY & HIGH-RESOLUTION LIGHTBOX
+   --------------------------------------------------------- */
+.lodge-gallery-section {
+  padding: 100px 0;
+  background-color: var(--color-bg-surface);
+  transition: background-color var(--transition-smooth);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+}
+
+@media (min-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  background: #111a14;
+  aspect-ratio: 4 / 3;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.gallery-item-wide {
+  grid-column: span 1;
+}
+
+@media (min-width: 1024px) {
+  .gallery-item-wide {
+    grid-column: span 2;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(14, 22, 17, 0.88) 0%, rgba(14, 22, 17, 0.25) 45%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px 22px;
+  opacity: 0.95;
+  transition: opacity var(--transition-smooth);
+  pointer-events: none;
+}
+
+.gallery-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-gold);
+  margin-bottom: 4px;
+}
+
+.gallery-name {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+/* Lightbox Modal */
+.modal-lightbox-dialog {
+  max-width: 1080px;
+  width: 95vw;
+  background: #0d1410;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+  padding: 0;
+}
+
+.lightbox-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #0b110e;
+}
+
+.lightbox-img-wrap {
+  width: 100%;
+  height: min(65vh, 600px);
+  background: #050806;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-caption-bar {
+  padding: 18px 24px;
+  background: #111a15;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lightbox-caption {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #d8e2dc;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.lightbox-counter {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-gold);
+  white-space: nowrap;
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: calc(50% - 30px);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(14, 22, 17, 0.75);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.lightbox-nav-btn:hover {
+  background: #ffffff;
+  color: #1a3219;
+  border-color: #ffffff;
+  transform: scale(1.08);
+}
+
+.lightbox-prev {
+  left: 16px;
+}
+
+.lightbox-next {
+  right: 16px;
+}
+
+/* ---------------------------------------------------------
+   STICKY BOTTOM BOOKING BAR (Mobile 100/100 Conversion CTA)
+   --------------------------------------------------------- */
+.sticky-booking-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 800;
+  background: rgba(12, 18, 14, 0.92);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px 20px;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.sticky-booking-bar.visible {
+  transform: translateY(0);
+}
+
+/* Only show on mobile/tablet */
+@media (min-width: 1024px) {
+  .sticky-booking-bar {
+    display: none;
+  }
+}
+
+.sticky-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sticky-bar-price {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.sticky-bar-from {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sticky-bar-amount {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.sticky-bar-amount small {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sticky-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sticky-bar-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #128c7e;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.sticky-bar-whatsapp:hover {
+  background: #075e54;
+  transform: scale(1.06);
+}
+
+.sticky-bar-cta {
+  padding: 12px 24px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* Add bottom padding to body so sticky bar doesn't hide content */
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: 80px;
+  }
+}
+
+/* ---------------------------------------------------------
+   REDUCED MOTION & SAVE-DATA PERFORMANCE
+   --------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .lodge-split-img,
+  .lodge-card-img,
+  .gallery-item img {
+    transition: none !important;
+  }
+}
