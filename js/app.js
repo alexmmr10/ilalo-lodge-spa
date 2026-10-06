@@ -39,7 +39,7 @@ const TRANSLATIONS = {
     doc_title: 'ILALÓ LODGE & SPA™ · Hotel de Naturaleza, Cabañas & Domos en Ecuador',
     // Announcement Ribbon
     announcement_badge: 'Promoción Especial',
-    announcement_text: '🌿 20% de descuento por temporada baja | Desayuno de campo & Circuito Spa incluidos',
+    announcement_text: '🌿 25% de descuento por temporada baja | Desayuno de campo & Circuito Spa incluidos',
     announcement_cta: 'Aprovechar Descuento →',
     // Header & Logo
     logo_subtitle: 'HOTEL DE NATURALEZA · ECUADOR',
@@ -349,7 +349,7 @@ const TRANSLATIONS = {
     doc_title: 'ILALÓ LODGE & SPA™ · Nature Hotel, Cabins & Domes in Ecuador',
     // Announcement Ribbon
     announcement_badge: 'Special Promotion',
-    announcement_text: '🌿 20% off low season discount | Country Breakfast & Spa Circuit included',
+    announcement_text: '🌿 25% de descuento por temporada baja | Desayuno de campo & Circuito Spa incluidos',
     announcement_cta: 'Claim Discount →',
     // Header & Logo
     logo_subtitle: 'NATURE HOTEL · ECUADOR',
